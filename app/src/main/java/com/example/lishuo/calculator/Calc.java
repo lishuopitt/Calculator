@@ -82,7 +82,8 @@ public class Calc extends Activity implements View.OnClickListener {
             case R.id.button0:
                 System.out.println("0 is pressed");
                 if(op2 != 0){
-                    op2 = 0; disp.setText("");
+                    op2 = 0;
+                    disp.setText("");
                 }
                 str = str.append(zero.getText());
                 disp.setText(str);
@@ -186,9 +187,11 @@ public class Calc extends Activity implements View.OnClickListener {
                 optr = "*";
                 System.out.println("* is pressed");
                 if(op1 == 0){
-                    op1 = Integer.parseInt(disp.getText().toString()); disp.setText("");
+                    op1 = Integer.parseInt(disp.getText().toString());
+                    disp.setText("");
                 } else if(op2 != 0){
-                    op2 = 0; disp.setText("");
+                    op2 = 0;
+                    disp.setText("");
                 } else{
                     op2 = Integer.parseInt(disp.getText().toString());
                     disp.setText("");
@@ -219,6 +222,7 @@ public class Calc extends Activity implements View.OnClickListener {
                 break;
             case R.id.buttonResult:
                 if(!optr.equals(null)){
+                    System.out.println("!optr.equals(null)");
                     if(op2 != 0){
                         if(optr.equals("+")){
                             disp.setText(""); /*op1 = op1 + op2;*/
@@ -232,7 +236,9 @@ public class Calc extends Activity implements View.OnClickListener {
                         } else if(optr.equals("/")){
                             disp.setText("");/* op1 = op1 / op2;*/
                             disp.setText("Result : " + Integer.toString(op1)); }
-                    } else{ operationFunction(); }
+                    } else{
+                        System.out.println("operationFunction()");
+                        operationFunction(); }
                 } break;
         }
 
