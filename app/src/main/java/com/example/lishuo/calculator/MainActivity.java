@@ -39,9 +39,7 @@ public class MainActivity extends Activity {
     }
 
     public void onButtonClick(View v){
-        if(v.getId()==R.id.CalculatorBotton){
-            Intent i=new Intent(MainActivity.this,Calculator.class);
-            startActivity(i);
-        }
+        Intent cal=new Intent(this,Calc.class);
+        startActivity(cal);
     }
 }
